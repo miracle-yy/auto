@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="api" default="build">
+    <target name="build" depends="phpcs,phpcpd,phpunit,pdepend,phpmd"/>
+    <property name="version-m"  value="1.1" />
+    <property name="version"    value="1.1.0" />
+    <property name="stability"  value="stable" />
+    <property name="tests.dir" value="test" />
+    <target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer">
+        <exec executable="cmd">
+            <arg line='/c phpcs --standard=PSR1 ${tests.dir}' />
+            <arg value="--ignore=build.xml" />
+        </exec>
+    </target>
+	<target name="phpcpd" description="Find duplicate code using PHPCPD">
+        <exec executable="cmd">
+            <arg line='/c php D:\phpPackage\vendor\sebastian\phpcpd\phpcpd --min-lines 5 --min-tokens 20 .' />
+        </exec>
+    </target>
+	<target name="pdepend" description="Calculate software metrics using PHP_Depend">
+		<exec executable="cmd">
+            <arg line='/c pdepend --summary-xml=summary.xml ./' />
+        </exec>
+	</target>             
+	<target name="phpmd" description="Perform project mess detection using PHPMD">
+		<exec executable="cmd">
+            <arg line='/c phpmd ./ xml unusedcode,naming,design,controversial,codesize,cleancode' />
+        </exec>
+	</target>
+    <target name="phpunit" description="Run unit tests with PHPUnit">
+            <exec executable="cmd" dir='${tests.dir}'>
+                <arg line="/c phpunit ."/>    <!--或者使用 <arg value="/c"/> <arg value="phpunit ."/>-->
+            </exec>
+    </target>
+</project>
