@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="api" default="build">
-    <target name="build" depends="phpcsdemo,phpcpddemo,pdependdemo,phpmddemo,phplogdemo,phpunitdemo"/>
+<project name="demo" default="build">
+    <target name="build" depends="phpcs,phpcpd,pdepend,phpmd,phploc,phpunit"/>
     <property name="version-m"  value="1.1" />
     <property name="version"    value="1.1.0" />
     <property name="stability"  value="stable" />
@@ -26,7 +26,7 @@
             <arg line='/c phpmd ./ xml unusedcode,naming,design,controversial,codesize,cleancode' />
         </exec>
 	</target>
-	<target name="phplog" description="Measure project size using PHPLOC">
+	<target name="phploc" description="Measure project size using PHPLOC">
 		<exec executable="cmd">
             <arg line='/c php D:\phpPackage\vendor\phploc\phploc\phploc ./' />
         </exec>
