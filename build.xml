@@ -6,6 +6,12 @@
     <property name="stability"  value="stable" />
     <property name="tests.dir" value="test" />
     <target name="phpunit" description="Run unit tests with PHPUnit">
-            <exec executable="phpunit" dir='${tests.dir}'></exec>
+        <phpunit haltonfailure="true" printsummary="true">
+			<batchtest>
+				<fileset dir="./test">
+				  <include name="*Test.php" />
+				</fileset>
+			</batchtest>
+        </phpunit>
     </target>
 </project>
