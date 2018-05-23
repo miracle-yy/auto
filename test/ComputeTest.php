@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-require '../Compute.php';
+require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'Compute.php';
 
 class ComputeTest extends TestCase
 {
