@@ -6,8 +6,6 @@
     <property name="stability"  value="stable" />
     <property name="tests.dir" value="test" />
     <target name="phpunit" description="Run unit tests with PHPUnit">
-            <exec executable="phpunit" dir='${tests.dir}'>
-          
-            </exec>
+            <exec executable="phpunit" dir='${tests.dir}'></exec>
     </target>
 </project>

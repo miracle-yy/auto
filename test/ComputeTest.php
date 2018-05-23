@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-require '..\Compute.php';
+require '../Compute.php';
 
 class ComputeTest extends TestCase
 {
