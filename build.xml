@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="myExercise" default="build">
-    <target name="build" depends="phpunit"/>
+    <target name="build" depends="phpunit,test"/>
     <property name="version-m"  value="1.1" />
     <property name="version"    value="1.1.0" />
     <property name="stability"  value="stable" />
     <property name="tests.dir" value="test" />
     <target name="phpunit" description="Run unit tests with PHPUnit">
-            <exec executable="cmd" dir='${tests.dir}'>
-                <arg line="/c phpunit ."/>    <!--或者使用 <arg value="/c"/> <arg value="phpunit ."/>-->
+            <exec executable="phpunit" dir='${tests.dir}'>
+          
             </exec>
     </target>
 </project>
