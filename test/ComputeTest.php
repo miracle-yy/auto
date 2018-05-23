@@ -33,7 +33,7 @@ class ComputeTest extends TestCase
 	
 	public function testdivision()
     {
-        $expected = 0;
+        $expected = 1;
         $result=$this->compute->division(2,2);
         $this->assertEquals($expected, $result);
     }
