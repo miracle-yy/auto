@@ -6,3 +6,7 @@ function demo(){
 function test(){
 	echo "webhook demo";
 }
+
+function example(){
+	echo "git demo";
+}
