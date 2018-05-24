@@ -3,7 +3,7 @@
     <target name="build" depends="phpunit"/>
     <property name="version-m"  value="1.1" />
     <property name="version"    value="1.1.0" />
-    <property name="stability"  value="stable" />
+    <property name="tar.name"  value="project" />
     <property name="tests.dir" value="test" />
     <target name="phpunit" description="Run unit tests with PHPUnit">
         <phpunit haltonfailure="true" printsummary="true">
@@ -14,4 +14,12 @@
 			</batchtest>
         </phpunit>
     </target>
+	<target name="tar" description="tar project">
+		<tar destfile="${tar.name}.tar">
+			<fileset dir=".">
+				 <exclude name="*.xml" />
+				 <exclude name=".*" />
+			</fileset>
+		</tar>
+	</target>
 </project>
