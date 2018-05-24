@@ -15,7 +15,7 @@
         </phpunit>
     </target>
 	<target name="tar" description="tar project" depends="phpunit">
-		<tar destfile="${tar.name}.tar">
+		<tar destfile="${tar.name}.tar.gz" compression="gzip">
 			<fileset dir=".">
 				 <exclude name="*.xml" />
 				 <exclude name=".*" />
