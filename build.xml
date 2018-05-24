@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="myExercise" default="build">
-    <target name="build" depends="phpunit"/>
+    <target name="build" depends="phpunit,tar"/>
     <property name="version-m"  value="1.1" />
     <property name="version"    value="1.1.0" />
     <property name="tar.name"  value="project" />
@@ -14,7 +14,7 @@
 			</batchtest>
         </phpunit>
     </target>
-	<target name="tar" description="tar project">
+	<target name="tar" description="tar project" depends="phpunit">
 		<tar destfile="${tar.name}.tar">
 			<fileset dir=".">
 				 <exclude name="*.xml" />
